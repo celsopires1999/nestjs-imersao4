@@ -1,4 +1,6 @@
 .docker/zsh/history/.zsh_history
+.env
+.docker/dbdata
 
 # compiled output
 /dist

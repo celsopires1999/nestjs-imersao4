@@ -11,11 +11,14 @@ RUN mkdir -p /usr/share/man/man1 && \
     curl \
     wget \
     fonts-powerline \
+    procps \
     gpg \
     gnupg \
     gpg-agent \
     socat \
     graphviz 
+
+RUN npm install -g @nestjs/cli@8.2.5 npm@8.5.5
 
 ENV JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
