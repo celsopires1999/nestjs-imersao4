@@ -10,8 +10,7 @@ export class TransactionsService {
   ) {}
 
   create(createTransactionDto: CreateTransactionDto) {
-    //@ts-ignore for testing
-    return this.transactionModel.create(createTransactionDto);
+    return this.transactionModel.create({ ...createTransactionDto });
   }
 
   findAll() {
