@@ -2,10 +2,13 @@ import {
   Column,
   DataType,
   Default,
+  HasMany,
   Model,
   PrimaryKey,
   Table,
 } from 'sequelize-typescript';
+import { ToNumber } from './../../common/db/to-number.decorator';
+import { Transaction } from './../../transactions/entities/transaction.entity';
 
 @Table({
   tableName: 'accounts',
@@ -20,10 +23,14 @@ export class Account extends Model {
   @Column({ allowNull: false })
   name: string;
 
+  @ToNumber
   @Default(0)
   @Column({ allowNull: false, type: DataType.DECIMAL(10, 2) })
   balance: number;
 
   @Column({ allowNull: false })
   subdomain: string;
+
+  @HasMany(() => Transaction)
+  transactions: Transaction[];
 }

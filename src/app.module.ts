@@ -7,6 +7,9 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { Transaction } from './transactions/entities/transaction.entity';
 import { AccountsModule } from './accounts/accounts.module';
 import { Account } from './accounts/entities/account.entity';
+import { CommonModule } from './common/common.module';
+import { AuthModule } from './auth/auth.module';
+import { TenantModule } from './tenant/tenant.module';
 
 @Module({
   imports: [
@@ -28,6 +31,9 @@ import { Account } from './accounts/entities/account.entity';
     }),
     TransactionsModule,
     AccountsModule,
+    CommonModule,
+    AuthModule,
+    TenantModule,
   ],
   controllers: [AppController],
   providers: [AppService],

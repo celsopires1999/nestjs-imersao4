@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
+import { Transaction } from 'src/transactions/entities/transaction.entity';
 import { CreateAccountDto } from './dto/create-account.dto';
 import { Account } from './entities/account.entity';
 
@@ -14,7 +15,7 @@ export class AccountsService {
   }
 
   findAll() {
-    return this.accountModel.findAll();
+    return this.accountModel.findAll({ include: [{ model: Transaction }] });
   }
 
   findOne(id: string) {

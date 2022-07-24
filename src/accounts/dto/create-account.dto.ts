@@ -6,7 +6,6 @@ export class CreateAccountDto {
   @IsNotEmpty()
   name: string;
 
-  @IsNotEmpty()
   balance: number;
 
   @MaxLength(255)
