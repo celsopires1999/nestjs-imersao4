@@ -2,6 +2,7 @@ import {
   BelongsTo,
   Column,
   DataType,
+  Default,
   ForeignKey,
   Model,
   PrimaryKey,
@@ -36,6 +37,7 @@ export class Report extends Model {
   @Column({ allowNull: true })
   file_url: string;
 
+  @Default(ReportStatus.PENDING)
   @Column({ allowNull: false })
   status: ReportStatus;
 
